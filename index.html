@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo</title>
+</head>
+
+<body>
+
+    <button id="login" onclick="user.login()">Entrar</button>
+
+    <script>
+        /*
+        Esse é o código JavaScript dessa página. 
+        */
+
+        var name = "Giulia Dias"
+        var email = "mariazinha@.com"
+        var birth = "2004-08-27"
+        var cpf = "012.345.678-90"
+        var address = "Rua da água molhada, 22"
+
+        // Dados do usuário. Forma moderna!
+        var user = {
+            name: "Giulia Dias",
+            email: "mariazinha@.com",
+            birth: "2004-08-27",
+            cpf: "012.345.678-90",
+            password: "12345",
+            address: "Rua da água molhada, 22",
+
+
+
+
+            // Métodos do objeto "user".
+            login: function () {
+
+                // Recebe o e-mail do promt e armazena.
+                var userEmail = prompt('Digite seu e-mail')
+
+                // Se o usuário não digitou nada...
+                if (userEmail == "" || userEmail == null) {
+                    alert("oooops! Você não informou um e-mail...")
+                    // Encerra a função retornando false
+                    return false
+                } else if (userEmail != user.email) {
+                    alert("oooops! E-mail não cadastrado...")
+                    return false
+                }
+
+                // Digite a senha.
+                var userPass = prompt('Digite sua senha:')
+                if (userPass == "" || userPass == null) {
+                    alert("ooooops! Você não informou a senha...")
+                    // Encerra a função retornando false
+                    return false
+                } else if (userPass != user.password) {
+                    alert("ooops! Senha errada...")
+                    return false
+                }
+            },
+            firstname: function (name) {
+                alert(name.split(' ')[0])
+            }
+        }
+
+            // Chama a função de login.
+            //user.login()
+
+    </script>
+
+</html>

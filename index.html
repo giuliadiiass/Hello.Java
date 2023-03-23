@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicativo</title>
-</head>
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYino5Uw2XBmU0nWDr3SS3VqMBh2M4_IqWDsHE3EeT8lZRC5rV7RxfJ1mGVGeuW3-r08w&usqp=CAU"
+        type="image/x-icon">
 
 <body>
 
@@ -16,25 +18,17 @@
         Esse é o código JavaScript dessa página. 
         */
 
-        var name = "Giulia Dias"
-        var email = "mariazinha@.com"
-        var birth = "2004-08-27"
-        var cpf = "012.345.678-90"
-        var address = "Rua da água molhada, 22"
 
-        // Dados do usuário. Forma moderna!
+        // Atributos do objeto "user".
         var user = {
             name: "Giulia Dias",
-            email: "mariazinha@.com",
+            email: "giuliadias@.com",
             birth: "2004-08-27",
             cpf: "012.345.678-90",
             password: "12345",
-            address: "Rua da água molhada, 22",
+            address: "Rua da água molhada, 41",
+            photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEixGiUQ91NpGdxphIyYFSsusVZhKN0ZwPZV0FlrpKJ31AFULgS1Xmcyc_VjhDWooNv0Y&usqp=CAU",
 
-
-
-
-            // Métodos do objeto "user".
             login: function () {
 
                 // Recebe o e-mail do promt e armazena.
@@ -54,12 +48,22 @@
                 var userPass = prompt('Digite sua senha:')
                 if (userPass == "" || userPass == null) {
                     alert("ooooops! Você não informou a senha...")
+
                     // Encerra a função retornando false
                     return false
                 } else if (userPass != user.password) {
-                    alert("ooops! Senha errada...")
+                    alert("ooops! Senha incorreta...")
                     return false
                 }
+
+                document.write('<img src="' + user.photo + '"> <br> Olá,  ' + user.name + ', seja bem vinda' + '!')
+                localStorage.userdata = JSON.stringify({
+                    name: user.name,
+                    email: user.email
+                })
+                let parts = user.birth.split('-')
+                let bdate = parts[2] + '/' + parts[1] + '/' + parts[0]
+                document.write(' <br> nascido em ' + bdate)
             },
             firstname: function (name) {
                 alert(name.split(' ')[0])
@@ -70,5 +74,18 @@
             //user.login()
 
     </script>
+    </body><script>
+        // Um contador simples de 0 até 10.
+    for(
+    let i = 0; // Cria uma variável de contador e inicializa seu valor.
+    i <= 10; // Enquanto essa expressão for verdadeira, roda o "loop".
+    i ++ // Incremento de 1 contador.
+    ){
+        
+        document.write (i + '')
+    }
+    </script>
+    
 
+</body>
 </html>
